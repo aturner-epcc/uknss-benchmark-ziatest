@@ -1,0 +1,3 @@
+srun --hint=nomultithread --distribution=block:block --ntasks 1024 --cpus-per-task 72 --ntasks-per-node  4 ./ziaprobe 1771328648 32530 4
+Time test was completed in   0:13 min:sec
+Slowest rank: 217
