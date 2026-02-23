@@ -1,4 +1,4 @@
-# UK-NSS Ziatest benchmark
+# UK-NNSS Ziatest benchmark
 
 Ziatest is intended to provide a realistic assessment of
 both launch and wireup requirements of MPI applications.
@@ -53,17 +53,6 @@ Stable
 ### Software
 
 - Ziatest
-
-### Architectures
-
-- CPU: x86, Arm
-- GPU: N/A
-
-### Languages and programming models
-
-- Programming languages: C
-- Parallel models: N/A
-- Accelerator offload models: N/A
 
 ## Building the benchmark
 
