@@ -48,9 +48,10 @@ Stable
 
 - @aturner-epcc ([https://github.com/aturner-epcc](https://github.com/aturner-epcc))
 
-## Overview
+**Important:** All results submitted should be based on the versions of IOR and
+mdtest included in this repository.
 
-### Software
+## Software
 
 - Ziatest
 
@@ -59,14 +60,12 @@ Stable
 **Important:** All results submitted should be based on the version of
 the ziatest software included in this repository.
 
-Any modifications made to the source code and build/installation files must be 
-shared as part of the bidder submission.
-
 ### Permitted modifications
 
 The only permitted modifications allowed are those that
 modify the source code or build/installation files to resolve unavoidable compilation or
-runtime errors.
+runtime errors. Any modifications must be fully documented (e.g., as a pull request, diff or patch file)
+and reported with the benchmark results.
 
 ### Manual build
 
@@ -77,25 +76,33 @@ but there is no dependence on OpenMPI;
 other MPI implementations can be used with little or no modification.
 
 To install the benchmark, you will need to compile both the ziatest.c and
-ziaprobe.c programs. A very simple Makefile is provided.
+ziaprobe.c programs. A very simple Makefile is provided. Edit the
+`Makefile` to set the correct compiler commands and then build with:
+
+```bash
+make
+```
+
 The ziatest.c program obtains the initial time stamp,
 and then executes the "mpirun" (or equivalent) command
 to initiate the actual benchmark (`./ziaprobe`).
 
 ## Running the benchmark
 
-### Required Tests
+### Required tests
 
-The purpose of Ziatest is to measure the time needed to launch full-system jobs,
+The purpose of Ziatest is to measure the time needed to launch full-system jobs
 and should be run using at least 99% of the compute nodes,
 and at least 1 MPI rank per NIC.
 
 ### Benchmark execution
 
 With the code compiled, use the command:
+
 ```
 ./ziatest <N> "<mpirun_command> <mpirun_options> "
 ```
+
 where `N` is the number of processes to be launched on each node,
 and `mpirun_command` is the command used to launch parallel jobs (e.g. mpirun),
 and `mpirun_options` describes the distribution of processes among nodes.
@@ -146,7 +153,7 @@ in the hopes it may prove of some diagnostic value.
 Example output from the [IsambardAI](https://docs.isambard.ac.uk/specs/#system-specifications-isambard-ai-phase-2) system is provided in
 the [example-output](./example-output/) directory.
 
-## Reporting Results
+## Reporting results
 
 The primary figure of merit is the test completion time reported by the ziatest
 software.
